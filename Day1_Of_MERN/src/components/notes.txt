@@ -1,0 +1,34 @@
+
+  Variation 1: Runs on Every render
+
+  useEffect(() => {
+    alert("I will run only one times");
+  });
+
+  Variation 2: Only runs at once
+
+  useEffect(() => {
+    alert("I will run only one times");
+  },[]);
+
+  Variation 3: Only runs on given specific Entity-----
+
+  useEffect(() => {
+    alert("I will runs when count is updated");
+  },[count])
+
+  Variation 4: Runs on multiple Entity -------
+
+  useEffect(() => {
+    alert("It will runs on both count updated");
+  }, [count, count2]);
+
+  Variation 5: Let's use CleanUp function..
+
+  useEffect(() => {
+    alert("count is updated");
+
+    return () => {
+      alert("count is unmounted from UI");
+    };
+  }, [count]);
