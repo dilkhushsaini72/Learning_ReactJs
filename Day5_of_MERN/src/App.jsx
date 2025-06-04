@@ -34,7 +34,7 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <h1 className="capitalize text-center text-2xl font-bold text-white py-3 bg-red-500">
-        Let's understand the React routing
+        Let's understand the React useContext
       </h1>
       <ChildA />
     </UserContext.Provider>
