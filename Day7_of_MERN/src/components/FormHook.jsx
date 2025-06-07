@@ -78,7 +78,7 @@ const FormHook = () => {
             onClick={onInputBtnClick}
             className="absolute right-0 top-10 pr-4 text-[#1ecfee] cursor-pointer font-bold"
           >
-            {inputBtn?"Hide":"Show"}
+            {inputBtn ? "Hide" : "Show"}
           </span>
           {errors.password && (
             <p className="mt-1 text-sm text-red-500">
