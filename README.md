@@ -11,6 +11,7 @@ The goal of this repository is to document my progress, reinforce concepts throu
 - **Day3_of_MERN**
 - **Day4_of_MERN** Background changer On Clicking the different Buttons
 - **Day5_of_MERN** Mini Project about when we click On a button 'Click to Show Users' users Data will show using useContext 
+- **Day6_of_MERN** It is a little bit bigger than previous . In this I use react routing, fetching API , and previous project for revision practice..
 
 More projects will be added as I progress further!
 
