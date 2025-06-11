@@ -14,6 +14,7 @@ The goal of this repository is to document my progress, reinforce concepts throu
 - **Day6_of_MERN** This project is little bit bigger than previous . In this I use react routing, fetching API , and previous project for revision practice..
 - **Day7_of_MERN** A validation form with some conditions using useForm Hook
 - **Day8_of_MERN** A counter application using react-redux-toolkit
+- **Day9_10_of_MERN** A website having two projects "Todo List" and "weather App"
 
 More projects will be added as I progress further!
 
