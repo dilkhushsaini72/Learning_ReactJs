@@ -9,7 +9,7 @@ const Contact = () => {
     watch,
     formState: { errors },
   } = useForm();
-
+ 
   const isAgree = watch("checkBox");
 
   const onSubmit = (data) => {
@@ -68,7 +68,7 @@ const Contact = () => {
               </p>
             )}
           </div>
-        </div>
+        </div> 
 
         {/* Email + Phone */}
         <div className="flex flex-col md:flex-row gap-4">
