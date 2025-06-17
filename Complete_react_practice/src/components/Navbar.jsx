@@ -1,8 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Cart_icon from "../assets/cart_icon.png";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+
+  const cartCount = useSelector((state) => state.Cart.cartCount)
+  
   return (
     <div className="px-10 bg-green-400 ">
       <div className="flex justify-between h-16 items-center">
@@ -55,13 +59,13 @@ const Navbar = () => {
               }
               to={"/cart"}
             >
-              <div className="flex">
-                Cart
+              <div className="flex relative">
+                Cart 
                 <img
                   src={Cart_icon}
                   alt="cart_icon"
                   width={20}
-                />
+                /> <span className="text-red-400 absolute top-[-12px] right-[5px]">{cartCount}</span>
               </div>
             </NavLink>
           </li>

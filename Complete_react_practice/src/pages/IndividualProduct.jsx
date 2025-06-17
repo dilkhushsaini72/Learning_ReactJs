@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cartSlice";
 
 const IndividualProduct = () => {
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const dispatch = useDispatch();
 
   const { id } = useParams();
 
@@ -38,7 +41,9 @@ const IndividualProduct = () => {
     );
   }
 
-  const { image, title, price, description, category, rating } = product;
+  function cartHandle () {
+    dispatch(addToCart(product))
+  }
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
@@ -46,31 +51,42 @@ const IndividualProduct = () => {
         {/* Product Image */}
         <div className="relative flex items-center justify-center">
           <img
-            src={image}
-            alt={title}
+            src={product.image}
+            alt={product.title}
             className="w-full h-[350px] object-contain rounded-md border"
           />
           <span className="absolute top-4 left-4 bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full uppercase font-medium shadow">
-            {category}
+            {product.category}
           </span>
         </div>
 
         {/* Product Details */}
         <div className="flex flex-col justify-between space-y-6">
           <div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">{title}</h1>
-            <p className="text-gray-600 mb-4 text-sm leading-relaxed">{description}</p>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+              {product.title}
+            </h1>
+            <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+              {product.description}
+            </p>
 
             <div className="flex items-center gap-4 mb-4">
-              <span className="text-2xl font-bold text-green-600">${price}</span>
+              <span className="text-2xl font-bold text-green-600">
+                ${product.price}
+              </span>
               <div className="flex items-center text-sm text-yellow-500 font-semibold">
-                ⭐ {rating.rate}
-                <span className="text-gray-500 ml-2">({rating.count} reviews)</span>
+                ⭐ {product.rating.rate}
+                <span className="text-gray-500 ml-2">
+                  {`( ${product.rating.count} ) reviews`}
+                </span>
               </div>
             </div>
           </div>
 
-          <button className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-lg font-semibold rounded-md hover:shadow-md transition">
+          <button
+            onClick={cartHandle}
+            className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-lg font-semibold rounded-md hover:shadow-md transition"
+          >
             Add to Cart
           </button>
         </div>
